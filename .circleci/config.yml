@@ -13,3 +13,5 @@ jobs:
           name: "Run tests"
           command: |
             npm run test
+      - store_test_results:
+          path: ./report/junit

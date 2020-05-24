@@ -140,8 +140,19 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
-  reporters: ["spec"],
-
+  reporters: ['spec',
+  ['allure', {
+    outputDir: 'report/allure-results',
+    disableWebdriverStepsReporting: true,
+    disableWebdriverScreenshotsReporting: false,
+  }],
+  ['junit', {
+    outputDir: 'report/junit',
+    outputFileFormat: function(options) { // optional
+      return `test-${options.cid}-results.xml`
+    }
+  }]
+  ],
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
