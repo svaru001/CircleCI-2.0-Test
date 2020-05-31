@@ -15,3 +15,15 @@ jobs:
             npm run test
       - store_test_results:
           path: ./report/junit
+workflows:
+   version: 2
+   nightly:
+      triggers:
+       - schedule:
+           cron: "46 20 * * *"
+           filters:
+             branches:
+               only:
+                 - master
+      jobs:
+       - build
