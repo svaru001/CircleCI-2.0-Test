@@ -17,7 +17,7 @@ jobs:
           path: ./report/junit
 workflows:
   version: 2
-  nightly:
+  build:
     triggers:
       - schedule:
           cron: "50 22 * * *"
@@ -25,6 +25,5 @@ workflows:
             branches:
               only:
                 - master
-                - beta
     jobs:
       - build
