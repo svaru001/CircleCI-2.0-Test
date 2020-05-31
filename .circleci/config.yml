@@ -1,4 +1,16 @@
 version: 2.1
+workflows:
+  version: 2.1
+  build:
+    triggers:
+      - schedule:
+          cron: "50 22 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build
 jobs:
   build:
     docker:
@@ -15,15 +27,3 @@ jobs:
             npm run test
       - store_test_results:
           path: ./report/junit
-workflows:
-  version: 2
-  build:
-    triggers:
-      - schedule:
-          cron: "50 22 * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - build
