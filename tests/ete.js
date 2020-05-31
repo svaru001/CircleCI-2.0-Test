@@ -11,13 +11,11 @@ describe("Covid Dashboard", () => {
       "//p[text()='Infected']/following-sibling::h5/span"
     ).getText();
     $("select").selectByVisibleText("India");
-
-    const newInfectedCount = $(
-      "//p[text()='Infected']/following-sibling::h5/span"
-    ).getText();
+    browser.pause(4000);
+    const newInfectedCount = $("//p[text()='Infected']/following-sibling::h5/span").getText();
     expect(newInfectedCount).to.not.equal(INFECTEDCOUNT);
-    console.warn("INFECTEDCOUNT" + INFECTEDCOUNT);
-    console.warn("newInfectedCount --" + newInfectedCount);
+    //console.warn("INFECTEDCOUNT" + INFECTEDCOUNT);
+    //console.warn("newInfectedCount --" + newInfectedCount);
   });
 
   it("should change values when contry changed to Global", function() {

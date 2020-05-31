@@ -1,0 +1,68 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1590896435437' stop='1590896450290'>
+    <name>Covid Dashboard</name>
+    <title>Covid Dashboard</title>
+    <test-cases>
+        <test-case start='1590896435438' status='passed' stop='1590896435874'>
+            <name>"before all" hook</name>
+            <title>"before all" hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1590896435874' status='failed' stop='1590896440027'>
+            <name>should change values when contry changed to India</name>
+            <title>should change values when contry changed to India</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>expected '6,059,017' to not equal '6,059,017'</message>
+                <stack-trace>AssertionError: expected '6,059,017' to not equal '6,059,017'
+                    at Context.&lt;anonymous> (/Users/sanketvaru/wdio-covid19/tests/ete.js:18:37)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1590896440027' status='passed' stop='1590896445154'>
+            <name>should change values when contry changed to Global</name>
+            <title>should change values when contry changed to Global</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1590896445154' status='passed' stop='1590896450289'>
+            <name>should scroll to chart and mouse hover on chart</name>
+            <title>should scroll to chart and mouse hover on chart</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
