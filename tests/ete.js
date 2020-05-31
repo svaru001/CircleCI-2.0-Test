@@ -15,9 +15,9 @@ describe("Covid Dashboard", () => {
     const newInfectedCount = $(
       "//p[text()='Infected']/following-sibling::h5/span"
     ).getText();
+    browser.pause(2000)
     expect(newInfectedCount).to.not.equal(INFECTEDCOUNT);
-    console.warn("INFECTEDCOUNT" + INFECTEDCOUNT);
-    console.warn("newInfectedCount --" + newInfectedCount);
+    
   });
 
   it("should change values when contry changed to Global", function() {
