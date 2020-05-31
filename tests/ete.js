@@ -11,11 +11,10 @@ describe("Covid Dashboard", () => {
       "//p[text()='Infected']/following-sibling::h5/span"
     ).getText();
     $("select").selectByVisibleText("India");
-
+    browser.pause(4000)
     const newInfectedCount = $(
       "//p[text()='Infected']/following-sibling::h5/span"
     ).getText();
-    browser.pause(2000)
     expect(newInfectedCount).to.not.equal(INFECTEDCOUNT);
     
   });
