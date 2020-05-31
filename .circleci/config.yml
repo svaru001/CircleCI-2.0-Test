@@ -1,18 +1,6 @@
 version: 2.1
-workflows:
-  version: 2
-  nightly:
-    triggers:
-      - schedule:
-          cron: "15 21 * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - test
 jobs:
-  test:
+  build:
     docker:
       - image: 'circleci/node:latest-browsers'
     steps:
@@ -27,3 +15,16 @@ jobs:
             npm run test
       - store_test_results:
           path: ./report/junit
+workflows:
+  version: 2
+  nightly:
+    triggers:
+      - schedule:
+          cron: "50 22 * * *"
+          filters:
+            branches:
+              only:
+                - master
+                - beta
+    jobs:
+      - build
