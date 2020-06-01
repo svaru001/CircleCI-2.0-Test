@@ -4,7 +4,7 @@ workflows:
   build:
     triggers:
       - schedule:
-          cron: "50 22 * * *"
+          cron: "45 10 * * *"
           filters:
             branches:
               only:
@@ -17,6 +17,10 @@ jobs:
       - image: 'circleci/node:latest-browsers'
     steps:
       - checkout
+      - run:
+          name: "Revive Demo Users on Staging"
+          command: |
+            npm run revive-users
       - run:
           name: "Install Dependancies"
           command: |
