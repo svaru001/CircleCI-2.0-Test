@@ -5,7 +5,7 @@ describe("Covid Dashboard", () => {
     browser.url("/");
   });
 
-  it("should change values when contry changed to India", function() {
+  it("should change values when contry changed to India. Updating testcase name", function() {
     browser.pause(4000);
     const INFECTEDCOUNT = $(
       "//p[text()='Infected']/following-sibling::h5/span"
