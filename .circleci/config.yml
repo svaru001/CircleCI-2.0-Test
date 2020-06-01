@@ -6,10 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Revive Demo Users on Staging"
-          command: |
-            npm run revive-users
-      - run:
           name: "Install Dependancies"
           command: |
             npm install
